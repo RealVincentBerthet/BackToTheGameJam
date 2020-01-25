@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
     public CharacterController2D controller;
 
@@ -16,6 +16,10 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        #region Action
+
+        #endregion
+        #region Movement
         horizontalMove = 0f;
         if (isLuna)
         {
@@ -49,11 +53,24 @@ public class PlayerMovement : MonoBehaviour
                 horizontalMove = runSpeed;
             }
         }
+        #endregion
     }
 
     private void FixedUpdate()
     {
         controller.Move(horizontalMove * Time.fixedDeltaTime, false, jump);
         jump = false;
+    }
+
+    public void Die()
+    {
+        if (isLuna)
+        {
+            Debug.Log("Luna is dead");
+        }
+        else
+        {
+            Debug.Log("Rival is dead");
+        }
     }
 }
