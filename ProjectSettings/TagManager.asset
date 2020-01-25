@@ -44,3 +44,6 @@ TagManager:
   - name: notglobal
     uniqueID: 3591753405
     locked: 0
+  - name: Astres
+    uniqueID: 2610960321
+    locked: 0
