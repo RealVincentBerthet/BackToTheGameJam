@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
     public CharacterController2D controller;
 
     public float runSpeed = 40f;
-
+    private bool m_alive = true;
     float horizontalMove = 0f;
     bool jump = false;
 
@@ -63,8 +63,9 @@ public class PlayerController : MonoBehaviour
         jump = false;
     }
 
-    public void Die()
+    public IEnumerator Die()
     {
+        m_alive = false;
         if (isLuna)
         {
             Debug.Log("Luna is dead");
@@ -73,5 +74,20 @@ public class PlayerController : MonoBehaviour
         {
             Debug.Log("Rival is dead");
         }
+        yield return null;
+    }
+
+
+    public bool IsAlive()
+    {
+        return m_alive;
+    }
+
+    public IEnumerator NextLevel()
+    {
+        yield return new WaitForSeconds(1.5f);
+        Debug.Log("GG ! Next Level");
     }
 }
+
+
