@@ -43,9 +43,21 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: notglobal
-    uniqueID: 3591753405
+  - name: background
+    uniqueID: 2296773025
     locked: 0
   - name: Astres
     uniqueID: 2610960321
+    locked: 0
+  - name: background_sup
+    uniqueID: 424526697
+    locked: 0
+  - name: int_maison
+    uniqueID: 4232840383
+    locked: 0
+  - name: Perso
+    uniqueID: 2610489101
+    locked: 0
+  - name: ext_maison
+    uniqueID: 2057795489
     locked: 0

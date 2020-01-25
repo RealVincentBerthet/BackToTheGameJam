@@ -67,7 +67,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1684006975
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: fc4aed8aaf219b94f8f2fa75a7047813, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -147,7 +147,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1684006975
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 42f6d3abd7c55c947aee241202d9f8fe, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -209,7 +209,7 @@ MonoBehaviour:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 1
   m_LightVolumeOpacity: 0
-  m_ApplyToSortingLayers: 00000000
+  m_ApplyToSortingLayers: 00000000a1f9e588a177a77a
   m_LightCookieSprite: {fileID: 0}
   m_UseNormalMap: 0
   m_LightOrder: 0
@@ -241,7 +241,7 @@ GameObject:
   - component: {fileID: 1849837854862927808}
   - component: {fileID: 1849837854862927807}
   m_Layer: 0
-  m_Name: Global Light 2D
+  m_Name: Lum_on_astre
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -347,7 +347,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89227101b06ea4b44b7735258ce68a5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isRotate: 0
+  isRotate: 1
   Sun: {fileID: 1849837853405455035}
   Moon: {fileID: 1849837853233809298}
   Lum_Background: {fileID: 1849837854217125773}
+  RotateSpeed: 5
+  Radius: 7
+  color_Jour: {r: 1, g: 1, b: 1, a: 1}
+  color_Nuit: {r: 0, g: 0.07450981, b: 0.7176471, a: 1}
