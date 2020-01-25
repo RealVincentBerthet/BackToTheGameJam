@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 1089625696954161475}
   - component: {fileID: 1613934411362142475}
   - component: {fileID: 2571943556234784458}
-  - component: {fileID: 1554429720305421569}
+  - component: {fileID: 2599933429165254852}
   m_Layer: 0
   m_Name: Luna
   m_TagString: Player
@@ -182,7 +182,7 @@ CapsuleCollider2D:
   m_Offset: {x: -0.24153471, y: 0.1207695}
   m_Size: {x: 7.907054, y: 17.987953}
   m_Direction: 0
---- !u!114 &1554429720305421569
+--- !u!114 &2599933429165254852
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -195,7 +195,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 1089625696954161475}
-  runSpeed: 50
+  runSpeed: 40
   isLuna: 1
 --- !u!1 &1613934411601659082
 GameObject:
