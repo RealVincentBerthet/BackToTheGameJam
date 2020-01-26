@@ -150,10 +150,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4a2e8a843898bd4b8160c14e3eaa2a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_JumpForce: 400
+  m_JumpForce: 800
   m_CrouchSpeed: 0.36
   m_MovementSmoothing: 0.05
-  m_AirControl: 0
+  m_AirControl: 1
   m_WhatIsGround:
     serializedVersion: 2
     m_Bits: 256
@@ -217,10 +217,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 1089625696954161475}
-  runSpeed: 50
+  runSpeed: 35
   animator: {fileID: 8966010223586097872}
   otherPlayer: {fileID: 0}
   helpBulb: {fileID: 5249158963175350915}
+  m_deadScreen: {fileID: 0}
   isLuna: 1
 --- !u!1 &1613934411601659082
 GameObject:
@@ -352,7 +353,7 @@ SpriteRenderer:
   m_SortingLayerID: -1684478195
   m_SortingLayer: 5
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 36ed2f7b9d2745c46bf39540a8cd630a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4ead5ec4c25774f438b4845cae5d28d8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
