@@ -54,6 +54,7 @@ public class Switcher : MonoBehaviour
     //ACTIONS
     public void Change()
     {
+        this.GetComponent<AudioSource>().Play();
         if (m_astre != null)
         {
             m_astre.isRotate = true;
@@ -65,7 +66,6 @@ public class Switcher : MonoBehaviour
     private void ChangeLight()
     {
         //la lampe c'est soit nuit soit vide
-
         if (m_light.tag.Equals("night"))
         {
             m_light.tag = "empty";

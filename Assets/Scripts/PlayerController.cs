@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class PlayerController : MonoBehaviour
 {
     public CharacterController2D controller;
-
+    public AudioSource[] tab_audio;
     public float runSpeed = 40f;
     private bool m_alive = true;
     float horizontalMove = 0f;
@@ -83,20 +83,26 @@ public class PlayerController : MonoBehaviour
 
     public IEnumerator Die()
     {
-        m_alive = false;
-        if (isLuna)
+        if (IsAlive())
         {
-            Debug.Log("Luna is dead");
-        }
-        else
-        {
-            Debug.Log("Rival is dead");
-        }
+            m_alive = false;
+            if (isLuna)
+            {
+                Debug.Log("Luna is dead");
+            }
+            else
+            {
+                Debug.Log("Rival is dead");
+            }
 
-        animator.SetTrigger("Death");
-        yield return new WaitForSeconds(1.0f);
-        m_deadScreen.SetActive(true);
-        StartCoroutine(RetryLevel());
+            int random = Random.Range(0, tab_audio.Length);
+            tab_audio[random].Play();
+
+            animator.SetTrigger("Death");
+            yield return new WaitForSeconds(1.0f);
+            m_deadScreen.SetActive(true);
+            StartCoroutine(RetryLevel());
+        }
     }
 
 
@@ -110,14 +116,9 @@ public class PlayerController : MonoBehaviour
         Debug.Log("GG ! Next Level");
         GameObject.Find("FXPanel").GetComponent<Animator>().SetTrigger("end");
         yield return new WaitForSeconds(2.0f);
-        if (SceneManager.GetActiveScene().buildIndex < SceneManager.sceneCount)
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        }
-        else
-        {
-            SceneManager.LoadScene(0);
-        }
+
+         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+
     }
 
 

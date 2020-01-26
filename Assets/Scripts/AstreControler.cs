@@ -5,6 +5,7 @@ using UnityEngine.Experimental.Rendering.LWRP;
 
 public class AstreControler : MonoBehaviour
 {
+    public AudioSource[] tab_audio;
     public bool isRotate = false;
     private bool isSun = true;
 
@@ -68,6 +69,7 @@ public class AstreControler : MonoBehaviour
             }
             else //fin passage jour à nuit
             {
+                tab_audio[1].Play();
                 isSun = false;
                 isRotate = false;
                 Lum_Background.color = color_Nuit;
@@ -98,6 +100,7 @@ public class AstreControler : MonoBehaviour
             }
             else //fin passage nuit à jour
             {
+                tab_audio[0].Play();
                 Lum_Background.color = color_Jour;
                 isSun = true;
                 isRotate = false;
