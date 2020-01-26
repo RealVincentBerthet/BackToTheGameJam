@@ -4,7 +4,6 @@ using UnityEngine;
 public class Switcher : MonoBehaviour
 {
     public AstreControler m_astre;
-    public GameObject m_atroGroup;
     public LigthTrigger m_light;
     private List<Collider2D> m_collide;
 
@@ -31,9 +30,14 @@ public class Switcher : MonoBehaviour
     {
         foreach(Collider2D c in m_collide)
         {
-            if (c.tag.Equals("Player"))
+            if (c.tag.Equals("Player") && c.GetComponent<PlayerController>().IsAlive())
             {
-                if (Input.GetKeyDown(KeyCode.E) && c.GetComponent<PlayerController>().IsAlive())
+                if(Input.GetKeyDown(KeyCode.E) && c.GetComponent<PlayerController>().isLuna)
+                {
+                    Debug.Log("interact");
+                    Change();
+                }
+                else if (Input.GetKeyDown(KeyCode.RightControl) && !c.GetComponent<PlayerController>().isLuna)
                 {
                     Debug.Log("interact");
                     Change();
@@ -47,28 +51,12 @@ public class Switcher : MonoBehaviour
     {
         if (m_astre != null)
         {
-            ChangeAstre();
+            m_astre.isRotate = true;
         }else if(m_light != null)
         {
             ChangeLight();
         }
     }
-
-    private void ChangeAstre()
-    {
-        //@TODO a mettre dans prefab de la moon
-        m_astre.isRotate = true;
-        string status = m_astre.GetIsSun() ? "day" : "night";
-        LigthTrigger[] t = m_atroGroup.GetComponentsInChildren<LigthTrigger>();
-        
-        for(int i = 0; i < t.Length; i++)
-        {
-            t[i].tag = status;
-            Debug.Log(status);
-        }
- 
-    }
-
     private void ChangeLight()
     {
         //la lampe c'est soit nuit soit vide

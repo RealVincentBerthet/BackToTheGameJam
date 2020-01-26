@@ -12,7 +12,8 @@ public class LigthTrigger : MonoBehaviour
         m_colliders = new List<Collider2D>();
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+
+    private void OnTriggerStay2D(Collider2D collision)
     {
         if (!m_endLevel)
         {
@@ -36,7 +37,7 @@ public class LigthTrigger : MonoBehaviour
         }
         else
         {
-            m_colliders.Add(collision);
+            if(!m_colliders.Contains(collision)) m_colliders.Add(collision);
             //if there are alive
             if (m_colliders.Count > 1)
             {
@@ -61,10 +62,6 @@ public class LigthTrigger : MonoBehaviour
         }
     }
 
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        m_colliders.Remove(other);
-    }
 
     public void ChangeTag(string tag)
     {

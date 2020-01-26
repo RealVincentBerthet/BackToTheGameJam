@@ -21,7 +21,7 @@ public class AstreControler : MonoBehaviour
 
     public Color color_Jour = new Color(1, 1, 1); 
     public Color color_Nuit = new Color(0 / 255f, 19 / 255f, 183 / 255f);
-
+    public GameObject m_atroGroup;
 
     public bool GetIsSun()
     {
@@ -71,6 +71,13 @@ public class AstreControler : MonoBehaviour
                 isSun = false;
                 isRotate = false;
                 Lum_Background.color = color_Nuit;
+                string status = GetIsSun() ? "day" : "night";
+                LigthTrigger[] t = m_atroGroup.GetComponentsInChildren<LigthTrigger>();
+
+                for (int i = 0; i < t.Length; i++)
+                {
+                    t[i].tag = status;
+                }
             }
 
         }
@@ -94,6 +101,14 @@ public class AstreControler : MonoBehaviour
                 Lum_Background.color = color_Jour;
                 isSun = true;
                 isRotate = false;
+
+                string status = GetIsSun() ? "day" : "night";
+                LigthTrigger[] t = m_atroGroup.GetComponentsInChildren<LigthTrigger>();
+
+                for (int i = 0; i < t.Length; i++)
+                {
+                    t[i].tag = status;
+                }
             }
 
         }
