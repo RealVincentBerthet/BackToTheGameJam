@@ -7,8 +7,7 @@ This game has been released during the **Game Jam 2020**. The aim of this event 
 ![](./Docs/GameJam2k20.jpg)
 
 
-| <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Orange_logo.svg/1022px-Orange_logo.svg.png" width="64" height="64"> | <img src="https://esir.univ-rennes1.fr/sites/esir.univ-rennes1.fr/files/esir_0.png" width="120" height="64"> |<img src="https://lh3.googleusercontent.com/0yWs4L0IfsJCXqU2EgmcWU75sDiFwr6D0QAYpkg5zE7vimIXdV43uZLsGVIDXE-c0Zs=w412-h220-rw" width="64" height="64"> |
-|:-:|:-:|:-:|
+
 
 ## Members
 
@@ -18,13 +17,14 @@ This game has been released during the **Game Jam 2020**. The aim of this event 
 | Developer | Developer | Handballer | Game and sound designer | Graphic Designer |
 
 
-## Introduction
+## Story
 Luna & Helios story [...] **@TODO**
 
 ## Screenshots
 
-| ![](./Docs/Home.png) | ![](./Docs/Rules.png) | ![](./Docs/Level_1.png) | ![](./Docs/Level_2.png) | ![](./Docs/Level_3.png) | ![](./Docs/End.png) |
-|:-:|:-:|:-:| :-:| :-:| :-:|
-| Home | Rules| Level 1 | Level 2 | Level 3 | End |
 
-
+| ![](./Docs/Home.png) | ![](./Docs/Rules.png) | ![](./Docs/Level_1.png) |
+|:-:|:-:|:-:|
+|Home|Rules|Level 1|
+| ![](./Docs/Level_2.png)| ![](./Docs/Level_3.png) |  ![](./Docs/End.png) |
+|Level 2|Level 3| End|
