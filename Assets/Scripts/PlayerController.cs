@@ -1,6 +1,5 @@
 
-﻿using System.Collections;
-using System.Collections.Generic;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -16,20 +15,16 @@ public class PlayerController : MonoBehaviour
     public PlayerController otherPlayer;
     public SpriteRenderer helpBulb;
     public GameObject m_deadScreen;
-
     public bool isLuna = false;
 
     public void Awake()
     {
-
         helpBulb.enabled = false;
+        m_deadScreen.SetActive(false);
     }
-    // Update is called once per frame
+
     void Update()
     {
-        #region Action
-
-        #endregion
         #region Movement
         horizontalMove = 0f;
         if(!m_alive)
@@ -86,15 +81,6 @@ public class PlayerController : MonoBehaviour
         if (IsAlive())
         {
             m_alive = false;
-            if (isLuna)
-            {
-                Debug.Log("Luna is dead");
-            }
-            else
-            {
-                Debug.Log("Rival is dead");
-            }
-
             int random = Random.Range(0, tab_audio.Length);
             tab_audio[random].Play();
 
@@ -105,7 +91,6 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-
     public bool IsAlive()
     {
         return m_alive;
@@ -113,22 +98,18 @@ public class PlayerController : MonoBehaviour
 
     public IEnumerator NextLevel()
     {
-        Debug.Log("GG ! Next Level");
-        GameObject.Find("FXPanel").GetComponent<Animator>().SetTrigger("end");
+        //GameObject.Find("FXPanel").GetComponent<Animator>().SetTrigger("end");
         yield return new WaitForSeconds(2.0f);
 
-         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 
     }
 
-
     public IEnumerator RetryLevel()
     {
-        Debug.Log("Retry");
-        GameObject.Find("FXPanel").GetComponent<Animator>().SetTrigger("end");
+        //GameObject.Find("FXPanel").GetComponent<Animator>().SetTrigger("end");
         yield return new WaitForSeconds(5.0f);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-
     }
 
     public void showHelpBulb(bool visible)

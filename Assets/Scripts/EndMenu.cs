@@ -20,7 +20,6 @@ public class EndMenu : MonoBehaviour
         string minutes = Mathf.Floor(time_elapsed / 60).ToString("00");
         string seconds = (time_elapsed % 60).ToString("00");
 
-
         m_timer.text = minutes + ":" + seconds;
     }
     

@@ -11,12 +11,10 @@ public class Switcher : MonoBehaviour
     public Light2D m_light2d;
     private List<Collider2D> m_collide;
 
-
     void Awake()
     {
         m_collide = new List<Collider2D>();    
     }
-
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -41,19 +39,16 @@ public class Switcher : MonoBehaviour
             {
                 if(Input.GetKeyDown(KeyCode.E) && c.GetComponent<PlayerController>().isLuna)
                 {
-                    Debug.Log("interact");
                     Change();
                 }
-                else if (Input.GetKeyDown(KeyCode.RightControl) && !c.GetComponent<PlayerController>().isLuna)
+                else if (Input.GetKeyDown(KeyCode.I) && !c.GetComponent<PlayerController>().isLuna)
                 {
-                    Debug.Log("interact");
                     Change();
                 }
             }
         }
     }
 
-    //ACTIONS
     public void Change()
     {
         this.GetComponent<AudioSource>().Play();
@@ -65,10 +60,11 @@ public class Switcher : MonoBehaviour
             ChangeLight();
         }
     }
+
     private void ChangeLight()
     {
-        //la lampe c'est soit nuit soit vide
-        if(l_light != null && l_light2D != null)
+        //Artificial light is set to null or night
+        if (l_light != null && l_light2D != null)
         {
             for(int i = 0; i < l_light2D.Count; i++)
             {
@@ -85,7 +81,8 @@ public class Switcher : MonoBehaviour
                     l2d.intensity = 0;
                 }
             }
-        } else
+        }
+        else
         {
             if (m_light.tag.Equals("night"))
             {
@@ -98,6 +95,5 @@ public class Switcher : MonoBehaviour
                 m_light2d.intensity = 0;
             }
         }
-  
     }
 }

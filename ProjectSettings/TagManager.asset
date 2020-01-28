@@ -56,12 +56,15 @@ TagManager:
   - name: int_maison
     uniqueID: 4232840383
     locked: 0
-  - name: caillou
-    uniqueID: 3320413559
+  - name: caillou_back
+    uniqueID: 2563650613
     locked: 0
   - name: Perso
     uniqueID: 2610489101
     locked: 0
   - name: ext_maison
     uniqueID: 2057795489
+    locked: 0
+  - name: caillou_front
+    uniqueID: 3320413559
     locked: 0

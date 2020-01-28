@@ -69,12 +69,12 @@ SpriteRenderer:
   m_SortingLayerID: -1684006975
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: fc4aed8aaf219b94f8f2fa75a7047813, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f2ddb0adfec4fd34bb5efaa2616b3039, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.2, y: 0.2}
+  m_Size: {x: 38.399998, y: 21.599998}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -149,12 +149,12 @@ SpriteRenderer:
   m_SortingLayerID: -1684006975
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 42f6d3abd7c55c947aee241202d9f8fe, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 357bfb62bd9574b4da6982ac0f002057, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.2, y: 0.2}
+  m_Size: {x: 38.399998, y: 21.599998}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -353,14 +353,14 @@ MonoBehaviour:
   tab_audio:
   - {fileID: 5088023346512853368}
   - {fileID: 6804630526770777568}
-  isRotate: 1
+  isRotate: 0
   Sun: {fileID: 1849837853405455035}
   Moon: {fileID: 1849837853233809298}
   Lum_Background: {fileID: 1849837854217125773}
   RotateSpeed: 5
-  Radius: 7
+  Radius: 7.53
   color_Jour: {r: 1, g: 1, b: 1, a: 1}
-  color_Nuit: {r: 0, g: 0.07450981, b: 0.7176471, a: 1}
+  color_Nuit: {r: 0.3254717, g: 0.39550465, b: 1, a: 1}
   m_atroGroup: {fileID: 0}
 --- !u!82 &5088023346512853368
 AudioSource:

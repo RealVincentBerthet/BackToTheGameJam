@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Experimental.Rendering.LWRP;
 
 public class AstreControler : MonoBehaviour
@@ -29,7 +27,6 @@ public class AstreControler : MonoBehaviour
         return isSun;
     }
 
-    // Start is called before the first frame update
     void Start()
     {
         _centre = transform.position;
@@ -45,7 +42,6 @@ public class AstreControler : MonoBehaviour
 
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (isSun)
@@ -81,12 +77,10 @@ public class AstreControler : MonoBehaviour
                     t[i].tag = status;
                 }
             }
-
         }
 
         if (isRotate && !isSun)
         {
-
             _angle += RotateSpeed * Time.deltaTime;
             if (_angle % (2 * Mathf.PI) > Mathf.PI)
             {
@@ -113,8 +107,6 @@ public class AstreControler : MonoBehaviour
                     t[i].tag = status;
                 }
             }
-
         }
-
     }
 }

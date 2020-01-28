@@ -12,21 +12,10 @@ public class LadderTrigger : MonoBehaviour
     {
         m_collide = new List<Collider2D>();
     }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
     void Update()
     {
         isClimbing = Input.GetKey(KeyCode.E);
-    }
-
-    public void FixedUpdate()
-    {
-        
     }
 
     public void OnTriggerEnter2D(Collider2D collision)
@@ -37,12 +26,8 @@ public class LadderTrigger : MonoBehaviour
         }
     }
 
-
-
     public void OnTriggerExit2D(Collider2D collision)
     {
         m_collide.Remove(collision);
     }
-
-
 }

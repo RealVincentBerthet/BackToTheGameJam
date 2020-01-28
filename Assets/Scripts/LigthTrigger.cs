@@ -12,7 +12,6 @@ public class LigthTrigger : MonoBehaviour
         m_colliders = new List<Collider2D>();
     }
 
-
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (!m_endLevel)
@@ -61,7 +60,6 @@ public class LigthTrigger : MonoBehaviour
             }
         }
     }
-
 
     public void ChangeTag(string tag)
     {
