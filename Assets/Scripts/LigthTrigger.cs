@@ -55,6 +55,13 @@ public class LigthTrigger : MonoBehaviour
                 if (player > 1)
                 {
                     //Luna and Rival are together
+                    foreach (Collider2D c in m_colliders)
+                    {
+                        if (c.tag.Equals("Player"))
+                        {
+                            c.GetComponent<PlayerController>().runSpeed = 0;
+                        }
+                    }
                     StartCoroutine(collision.GetComponent<PlayerController>().NextLevel());
                 }
             }

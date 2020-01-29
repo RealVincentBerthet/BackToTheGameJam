@@ -21,6 +21,7 @@ public class AstreControler : MonoBehaviour
     public Color color_Jour = new Color(1, 1, 1); 
     public Color color_Nuit = new Color(0 / 255f, 19 / 255f, 183 / 255f);
     public GameObject m_atroGroup;
+    public Light2D m_lightRocks;
 
     public bool GetIsSun()
     {
@@ -38,8 +39,6 @@ public class AstreControler : MonoBehaviour
         Moon.transform.position = _centre - offset;
 
         Lum_Background.color = color_Jour;
-
-
     }
 
     void Update()
@@ -62,6 +61,7 @@ public class AstreControler : MonoBehaviour
                 //evolution couleur vers nuit
                 float t = _angle % (2 * Mathf.PI) / Mathf.PI;
                 Lum_Background.color = Color.Lerp(color_Jour, color_Nuit,t);
+                m_lightRocks.intensity = 1-t;
             }
             else //fin passage jour à nuit
             {
@@ -91,6 +91,7 @@ public class AstreControler : MonoBehaviour
 
                 float t = 1 - (_angle % (2 * Mathf.PI) - Mathf.PI )/ Mathf.PI;
                 Lum_Background.color = Color.Lerp(color_Jour, color_Nuit, t);
+                m_lightRocks.intensity = 1-t;
             }
             else //fin passage nuit à jour
             {

@@ -3,7 +3,7 @@
 public class Manager : MonoBehaviour
 {
     private static Manager instance;
-
+    private string test = "toto";
     void Awake()
     {
         if(instance == null)
