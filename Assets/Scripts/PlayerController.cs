@@ -98,7 +98,6 @@ public class PlayerController : MonoBehaviour
 
     public IEnumerator NextLevel()
     {
-        //GameObject.Find("FXPanel").GetComponent<Animator>().SetTrigger("end");
         yield return new WaitForSeconds(2.0f);
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
@@ -107,7 +106,6 @@ public class PlayerController : MonoBehaviour
 
     public IEnumerator RetryLevel()
     {
-        //GameObject.Find("FXPanel").GetComponent<Animator>().SetTrigger("end");
         yield return new WaitForSeconds(5.0f);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
