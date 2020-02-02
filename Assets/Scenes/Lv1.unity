@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -280,7 +280,7 @@ PrefabInstance:
     - target: {fileID: 1613934411362142478, guid: 2ad38dd0a5edf33459f23600ac9676cc,
         type: 3}
       propertyPath: m_Name
-      value: Rival
+      value: Helios
       objectReference: {fileID: 0}
     - target: {fileID: 4094322524408554886, guid: 2ad38dd0a5edf33459f23600ac9676cc,
         type: 3}

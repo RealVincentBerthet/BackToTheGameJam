@@ -23,7 +23,7 @@ This game has been released during the **Game Jam 2020**. The aim of this event 
 
 ## Screenshots
 
-
+*Press F1 to skip a level*
 | ![](./Docs/Home.png) | ![](./Docs/Rules.png) | ![](./Docs/Level_1.png) |
 |:-:|:-:|:-:|
 |Home|Rules|Level 1|

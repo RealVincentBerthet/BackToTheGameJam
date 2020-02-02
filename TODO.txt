@@ -1,5 +1,0 @@
-compteur morts
-sound depuis not destroy
-LVL2-3-END-CREDITS
-Layer cailloux nuits
-fondu inverse fin niveau
