@@ -10,12 +10,14 @@ public class PlayerController : MonoBehaviour
     public float runSpeed = 40f;
     private bool m_alive = true;
     float horizontalMove = 0f;
+    float verticalMove = 0f;
     bool jump = false;
     public Animator animator;
     public PlayerController otherPlayer;
     public SpriteRenderer helpBulb;
     public GameObject m_deadScreen;
     public bool isLuna = false;
+    private bool isOnLadder = false;
 
     public void Awake()
     {
@@ -27,9 +29,11 @@ public class PlayerController : MonoBehaviour
     {
         #region Movement
         horizontalMove = 0f;
+        verticalMove = 0f;
         if(!m_alive)
         {
             horizontalMove = 0;
+            verticalMove = 0f;
             return;
         }
         if (controller && m_alive)
@@ -39,7 +43,14 @@ public class PlayerController : MonoBehaviour
 
                 if (Input.GetKey(KeyCode.Z))
                 {
-                    jump = true;
+                    if (isOnLadder)
+                    {
+                        verticalMove = -this.GetComponent<Rigidbody2D>().velocity.y+10;
+                    }
+                    else
+                    {
+                        jump = true;
+                    }     
                 }
                 if (Input.GetKey(KeyCode.Q))
                 {
@@ -55,7 +66,14 @@ public class PlayerController : MonoBehaviour
                 //Rival code
                 if (Input.GetKey(KeyCode.UpArrow))
                 {
-                    jump = true;
+                    if (isOnLadder)
+                    {
+                        verticalMove = -this.GetComponent<Rigidbody2D>().velocity.y + 10;
+                    }
+                    else
+                    {
+                        jump = true;
+                    }
                 }
                 if (Input.GetKey(KeyCode.LeftArrow))
                 {
@@ -72,7 +90,7 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        controller.Move(horizontalMove * Time.fixedDeltaTime, false, jump);
+        controller.Move(horizontalMove * Time.fixedDeltaTime,verticalMove, false, jump);
         jump = false;
     }
 
@@ -99,9 +117,7 @@ public class PlayerController : MonoBehaviour
     public IEnumerator NextLevel()
     {
         yield return new WaitForSeconds(2.0f);
-
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-
     }
 
     public IEnumerator RetryLevel()
@@ -110,8 +126,13 @@ public class PlayerController : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
-    public void showHelpBulb(bool visible)
+    public void ShowHelpBulb(bool visible)
     {
         helpBulb.enabled = visible;
+    }
+
+    public void SetOnLadder(bool b)
+    {
+        isOnLadder = b;
     }
 }
